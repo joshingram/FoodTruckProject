@@ -5,4 +5,3 @@
 ## What I Learned
 
 ### Technologies Used
-# FoodTruckProject
