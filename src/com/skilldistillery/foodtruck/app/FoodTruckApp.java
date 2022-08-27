@@ -38,8 +38,9 @@ public class FoodTruckApp {
 
 			// increment counter of how many trucks have been entered
 			numOfTrucksEntered++;
-			if (numOfTrucksEntered > 4) { //why doesn't == 5 work here??
-				System.out.println("That's five trucks, no more please.");
+			if (numOfTrucksEntered > 5) { 
+				System.out.println();
+				System.out.println("Whoa there! That's five trucks, no more please.");
 			}
 		}
 		while (true) {
@@ -81,16 +82,23 @@ public class FoodTruckApp {
 			case 3:
 				int starter = 0;
 				int highest = 0;
+				int tiecounter = 0;
 				for (int j = 0; j < counter; j++) {
 					starter = (arrTrucks[j].getRating());
 					if (starter > highest) {
 						highest = starter;
+					}
+					else if (starter == highest) {
+						tiecounter++;
 					}
 				}
 				for (int k = 0; k < counter; k++) {
 					if (arrTrucks[k].getRating() == highest) {
 						System.out.println("The truck with the highest rating is: " + arrTrucks[k]);
 					}
+				}
+				if (tiecounter > 0) {
+					System.out.println("Wow, it's a tie!  Better go back for more data (e.g., food).");
 				}
 				break;
 			case 4:
@@ -99,7 +107,7 @@ public class FoodTruckApp {
 				System.exit(0);
 				break;
 			default:
-				System.out.println("Invalid entry");
+				System.out.println("Invalid entry, try again - with feeling!");
 			}
 		}
 	}
