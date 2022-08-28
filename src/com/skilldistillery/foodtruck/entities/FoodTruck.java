@@ -2,14 +2,15 @@ package com.skilldistillery.foodtruck.entities;
 
 public class FoodTruck {
 
+	//encapsulated data
 	private static int totalTrucks = 1;
 	private int id;
 	private String name;
 	private String typeOfFood;
 	private int rating;
 
-	// TODO Be sure this is well encapsulated! ID, name, foodtype, rating 1-5
-
+	// 3 arg constructor, automatically assigns Truck ID# and increments totalTruck
+	// counter
 	public FoodTruck(String name, String typeOfFood, int rating) {
 		this.id = totalTrucks;
 		this.name = name;
@@ -17,15 +18,20 @@ public class FoodTruck {
 		this.rating = rating;
 		totalTrucks++;
 	}
+
+	// no arg constructor for good practice
 	public FoodTruck() {
 	}
-	
+
+	// getters and setters
 	public int getId() {
-		return id;		
+		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
@@ -50,11 +56,10 @@ public class FoodTruck {
 		this.rating = rating;
 	}
 
+	// creates an explicit toString
 	public String toString() {
-	    String output = "Truck ID#: " + id + ", Name: " + name + 
-	    		", Food Type: " + typeOfFood + ", Rating: " + rating;
-	    return output;
-	  }
-	
+		String output = "Truck ID#: " + id + ", Name: " + name + ", Food Type: " + typeOfFood + ", Rating: " + rating;
+		return output;
+	}
+
 }
-//TODO be sure to include: constructors / setters and getters / a toString
