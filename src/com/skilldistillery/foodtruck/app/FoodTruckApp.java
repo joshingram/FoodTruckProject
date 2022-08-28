@@ -107,21 +107,20 @@ public class FoodTruckApp {
 	private void getHighest(FoodTruck[] arrTrucks, int counter) {
 		int starter = 0;
 		int highest = 0;
-		int tieCounter = 0;
+		int tieCounter = -1;
 		for (int j = 0; j < counter; j++) {
 			starter = (arrTrucks[j].getRating());
 			if (starter > highest) {
 				highest = starter;
-			} else if (starter == highest) {
-				tieCounter++;
-			}
+			} 
 		}
 		for (int k = 0; k < counter; k++) {
 			if (arrTrucks[k].getRating() == highest) {
 				System.out.println("The truck with the highest rating is: " + arrTrucks[k]);
+				tieCounter++;
 			}
 		}
-		if (tieCounter > 0) {  //TODO Tie function has a glitch, will return tie if two lower scores are equal
+		if (tieCounter > 0) {  
 			System.out.println("Wow, it's a tie!  Better go back for more data (e.g., food).");
 		}
 	}
