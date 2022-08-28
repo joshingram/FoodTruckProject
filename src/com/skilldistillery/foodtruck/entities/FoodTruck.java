@@ -2,6 +2,7 @@ package com.skilldistillery.foodtruck.entities;
 
 public class FoodTruck {
 
+	private static int totalTrucks = 1;
 	private int id;
 	private String name;
 	private String typeOfFood;
@@ -9,13 +10,22 @@ public class FoodTruck {
 
 	// TODO Be sure this is well encapsulated! ID, name, foodtype, rating 1-5
 
-	public FoodTruck(int id, String name, String typeOfFood, int rating) {
-		this.id = id;
+	public FoodTruck(String name, String typeOfFood, int rating) {
+		this.id = totalTrucks;
 		this.name = name;
 		this.typeOfFood = typeOfFood;
 		this.rating = rating;
+		totalTrucks++;
 	}
-
+	public FoodTruck() {
+	}
+	
+	public int getId() {
+		return id;		
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
